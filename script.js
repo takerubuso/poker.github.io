@@ -40,3 +40,42 @@ updateUI() {
     document.getElementById('start-btn').style.display = this.gameStage === 'waiting' ? 'inline-block' : 'none';
     document.getElementById('reset-btn').style.display = this.gameStage !== 'waiting' ? 'inline-block' : 'none';
 }
+// ゲームのインスタンスを作成
+const game = new TexasHoldem(['Player 1', 'Player 2', 'Player 3', 'Player 4'], 1000, 10);
+
+// ゲーム開始ボタン
+document.getElementById('start-btn').addEventListener('click', () => {
+    game.startNewHand();
+});
+
+// リセットボタン
+document.getElementById('reset-btn').addEventListener('click', () => {
+    // リセットロジックを実装する必要があります
+    console.log('Game reset');
+    // 例: game = new TexasHoldem(['Player 1', 'Player 2', 'Player 3', 'Player 4'], 1000, 10);
+    game.updateUI();
+});
+
+// フォールドボタン
+document.getElementById('fold-btn').addEventListener('click', () => {
+    game.playerAction('fold');
+});
+
+// チェックボタン
+document.getElementById('check-btn').addEventListener('click', () => {
+    game.playerAction('check');
+});
+
+// コールボタン
+document.getElementById('call-btn').addEventListener('click', () => {
+    game.playerAction('call');
+});
+
+// レイズボタン
+document.getElementById('raise-btn').addEventListener('click', () => {
+    const raiseAmount = parseInt(document.getElementById('raise-amount').value);
+    game.playerAction('raise', raiseAmount);
+});
+
+// 初期UIの更新
+game.updateUI();

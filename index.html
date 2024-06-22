@@ -3,12 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BUSONpoker</title>
+    <title>テキサスホールデムポーカー</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>ようこそ！</h1>
-    <p>これはあなたの新しいウェブサイトです。</p>
+    <header>
+        <h1>テキサスホールデムポーカー</h1>
+    </header>
+    
+    <main>
+        <div id="game-controls">
+            <button id="start-btn">ゲーム開始</button>
+            <button id="reset-btn">リセット</button>
+        </div>
+
+        <div id="game-status">
+            <p>ステージ: <span id="game-stage">待機中</span></p>
+        </div>
+
+        <div id="game-table">
+            <div id="community-cards">
+                <!-- コミュニティカードがここに表示されます -->
+            </div>
+            
+            <div id="pot">
+                <p>ポット: <span id="pot-amount">0</span></p>
+            </div>
+            
+            <div id="players">
+                <!-- プレイヤー情報がここに表示されます -->
+            </div>
+
+            <div id="player-hand">
+                <h3>あなたの手札</h3>
+                <!-- プレイヤーの手札がここに表示されます -->
+            </div>
+        </div>
+        
+        <div id="controls">
+            <button id="fold-btn">フォールド</button>
+            <button id="call-btn">コール</button>
+            <button id="raise-btn">レイズ</button>
+            <input type="number" id="raise-amount" min="1" value="1">
+        </div>
+        
+        <div id="game-info">
+            <p>現在のプレイヤー: <span id="current-player"></span></p>
+            <p>現在のベット: <span id="current-bet">0</span></p>
+        </div>
+    </main>
+    
+    <footer>
+        <p>&copy; 2024 テキサスホールデムポーカー. All rights reserved.</p>
+    </footer>
+
+    <div id="result-modal" class="modal">
+        <div class="modal-content">
+            <h2>ゲーム結果</h2>
+            <p id="result-message"></p>
+            <button id="close-modal">閉じる</button>
+        </div>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>

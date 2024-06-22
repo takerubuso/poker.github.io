@@ -17,8 +17,11 @@
             <button id="reset-btn">リセット</button>
         </div>
 
-        <div id="game-status">
+        <div id="game-info">
             <p>ステージ: <span id="game-stage">待機中</span></p>
+            <p>ポット: <span id="pot-amount">0</span></p>
+            <p>現在のプレイヤー: <span id="current-player"></span></p>
+            <p>現在のベット: <span id="current-bet">0</span></p>
         </div>
 
         <div id="game-table">
@@ -26,37 +29,20 @@
                 <!-- コミュニティカードがここに表示されます -->
             </div>
             
-            <div id="pot">
-                <p>ポット: <span id="pot-amount">0</span></p>
-            </div>
-            
             <div id="players">
                 <!-- プレイヤー情報がここに表示されます -->
-            </div>
-
-            <div id="player-hand">
-                <h3>あなたの手札</h3>
-                <!-- プレイヤーの手札がここに表示されます -->
             </div>
         </div>
         
         <div id="controls">
             <button id="fold-btn">フォールド</button>
+            <button id="check-btn">チェック</button>
             <button id="call-btn">コール</button>
             <button id="raise-btn">レイズ</button>
             <input type="number" id="raise-amount" min="1" value="1">
         </div>
-        
-        <div id="game-info">
-            <p>現在のプレイヤー: <span id="current-player"></span></p>
-            <p>現在のベット: <span id="current-bet">0</span></p>
-        </div>
     </main>
     
-    <footer>
-        <p>&copy; 2024 テキサスホールデムポーカー. All rights reserved.</p>
-    </footer>
-
     <div id="result-modal" class="modal">
         <div class="modal-content">
             <h2>ゲーム結果</h2>
@@ -64,6 +50,10 @@
             <button id="close-modal">閉じる</button>
         </div>
     </div>
+
+    <footer>
+        <p>&copy; 2024 テキサスホールデムポーカー. All rights reserved.</p>
+    </footer>
 
     <script src="script.js"></script>
 </body>
